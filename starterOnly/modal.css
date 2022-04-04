@@ -54,14 +54,17 @@ img {
 
 .topnav a:hover {
   background-color: #ff0000;
+  text-decoration: underline;/*ajout pour correspondre à la maquette*/
   color: #ffffff;
   border-radius: 15px;
 }
 
 .topnav a.active {
   background-color: #ff0000;
+  text-decoration: underline;/*ajout pour correspondre à la maquette*/
   color: #ffffff;
   border-radius: 15px;
+  border-top: 1px;
 }
 
 .topnav .icon {
