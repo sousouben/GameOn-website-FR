@@ -63,15 +63,14 @@ img {
   background-color: #ff0000;
   text-decoration: underline;/*ajout pour correspondre à la maquette*/
   color: #ffffff;
-  border-radius: 15px;
-  border-top: 1px;
+  border-radius: 15px;  
 }
 
 .topnav .icon {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1130px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -229,12 +228,12 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+ 
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
     color: red;
-} */
+} 
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -299,7 +298,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close {
+#close {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -309,8 +308,8 @@ input[data-error]::after {
   cursor: pointer;
   transform: scale(0.7);
 }
-.close:before,
-.close:after {
+#close:before,
+#close:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -318,10 +317,10 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
-.close:before {
+#close:before {
   transform: rotate(45deg);
 }
-.close:after {
+#close:after {
   transform: rotate(-45deg);
 }
 .btn-submit,
@@ -465,6 +464,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -481,6 +481,14 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
+
+@media screen and (max-width: 1000px) {
+  .hero-headline {
+    font-size: 4.5rem;
+    white-space: normal;
+  }
+} 
+
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;
@@ -520,6 +528,42 @@ footer {
   }
 }
 
+@media screen and (max-width: 707px){
+  .hero-headline {
+      font-size: 3.5rem;
+      white-space: normal;
+  }
+  }
+
+@media screen and (max-width: 563px){
+  .hero-headline {
+      font-size: 2.5rem;
+      white-space: normal;
+  }
+  }
+
+@media screen and (max-width: 460px) {
+  body{position: relative;}
+  .hero-text{
+    margin-right: 100px;
+  }
+  
+}  
+
+@media screen and (max-width: 431px){
+  .hero-headline {
+      font-size: 2rem;
+      white-space: normal;
+  }
+  }
+
+@media screen and (max-width: 375px){
+.hero-headline {
+    font-size: 2rem;
+    white-space: normal;
+}
+}
+
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -528,5 +572,41 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+@media screen and (max-width: 347px){
+  .hero-headline {
+      font-size: 2rem;
+      white-space: normal;
+  }
+  .hero-text {
+    width: unset;
+    font-size: 1rem;
+  }
+  }
+
+  @media screen and (max-width: 280px){
+    .hero-headline {
+        font-size: 1.5rem;
+        white-space: normal;
+    }
+    .hero-text {
+      width: unset;
+      font-size: 1.5vh;
+    }
+    }
+  
+
+/*error messages*/
+#firstname-error,
+#lastname-error,
+#email-error,
+#birth-error,
+#quantity-error,
+#city-error{
+  color: red;
+  font-size: .7rem;
+  padding: .5rem 0;
+  display: none;
 }
 
