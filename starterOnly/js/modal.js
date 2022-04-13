@@ -11,37 +11,38 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const modalForm = document.getElementById("modal-form");
-const modalClose = document.getElementById("close"); // pour de fermer la modal
+const modalForm = document.querySelector("#modal-form"); //formulaire du modal
+const modalClose = document.querySelector("#close"); // pour de fermer la modal
 
 //Variables du formulaire
-let firstName = document.getElementById("first");
-let lastName = document.getElementById("last");
-let email = document.getElementById("email");
-let age = document.getElementById("birthdate");
-let participation = document.getElementById("quantity");
+let firstName = document.querySelector("#first");
+let lastName = document.querySelector("#last");
+let email = document.querySelector("#email");
+let age = document.querySelector("#birthdate");
+let participation = document.querySelector("#quantity");
 let city = document.querySelector('input[name="location"]');
 
 //Variables messages d'erreurs du formulaire
-let firstNameError = document.getElementById("firstname-error");
-let lastNameError = document.getElementById("lastname-error");
-let emailError = document.getElementById("email-error");
-let ageError = document.getElementById("birth-error");
-let participationError = document.getElementById("quantity-error");
-let cityError = document.getElementById("city-error");
+let firstNameError = document.querySelector("#firstname-error");
+let lastNameError = document.querySelector("#lastname-error");
+let emailError = document.querySelector("#email-error");
+let ageError = document.querySelector("#birth-error");
+let participationError = document.querySelector("#quantity-error");
+let cityError = document.querySelector("#city-error");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+modalClose.addEventListener("click", closeModal); //pour fermer le modal au click
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-//launch closing-modal event
-modalClose.addEventListener("click", (e) => {
-  modalbg.style.display = "none";
-}); // lorsqu'on click sur la croix la modal se ferme
+//launch close modal
+function closeModal() {
+  modalbg.style.display = "none"; // fermeture du modal
+}
 
 // fonction de vérification du champs prénom
 function checkOutFirstName() {
@@ -64,19 +65,20 @@ function checkOutFirstName() {
 function checkOutLastName() {
   if (!lastName.value) {
     lastNameError.innerHTML = "Veuillez renseigner votre nom";
-    lastName.style.display = "block";
+    lastNameError.style.display = "block";
     return false;
   } else if (lastName.value.length < 2) {
-    lastName.innerHTML = "Veuillez entrer 2 caractères ou plus pour votre nom";
-    lastName.style.display = "block";
+    lastNameError.innerHTML =
+      "Veuillez entrer 2 caractères ou plus pour votre nom";
+    lastNameError.style.display = "block";
     return false;
   } else {
-    lastName.style.display = "none";
+    lastNameError.style.display = "none";
     return true;
   }
 }
 
-//regex email
+//regex email pour accepter les charactères spéciaux chiffres et lettre avant et après le @
 let regexEmail =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -117,7 +119,25 @@ function checkOutQuant() {
   }
 }
 
+//fonction de vérification des villes
+function checkOutCity() {}
+
 //appel des fonction pour valider le formulaire
 function validForm() {
-  alert("formulaire envoyer");
+  let validCheckOutFirstName = checkOutFirstName();
+  let validCheckOutLastName = checkOutLastName();
+  let validCheckOutEmail = checkOutEmail();
+  //let validCheckOuBirth = checkOutBirth();
+  let validCheckOutQuant = checkOutQuant();
+  //let validCheckOuCity = checkOutCity();
+
+  if (
+    validCheckOutFirstName &&
+    validCheckOutLastName &&
+    validCheckOutEmail &&
+    validCheckOutQuant
+  ) {
+    alert("formulaire envoyé!");
+    return true;
+  }
 }
