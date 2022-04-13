@@ -13,6 +13,9 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalForm = document.querySelector("#modal-form"); //formulaire du modal
 const modalClose = document.querySelector("#close"); // pour de fermer la modal
+const modalGoodMessage = document.querySelector("#modal-message");
+const modalCloseGoodMessage = document.querySelector("#close-message");
+const modalCloseGoodBtn = document.querySelector("#btn-close");
 
 //Variables du formulaire
 let firstName = document.querySelector("#first");
