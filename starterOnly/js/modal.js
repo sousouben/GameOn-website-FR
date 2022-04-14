@@ -17,21 +17,23 @@ const modalGoodMessage = document.querySelector("#modal-message");
 const modalCloseGoodMessage = document.querySelector("#close-message");
 const modalCloseGoodBtn = document.querySelector("#btn-close");
 
-//Variables du formulaire
-let firstName = document.querySelector("#first");
-let lastName = document.querySelector("#last");
-let email = document.querySelector("#email");
+//Variables du formulaire 
+const firstName = document.querySelector("#first");
+const lastName = document.querySelector("#last");
+const email = document.querySelector("#email");
 let age = document.querySelector("#birthdate");
-let participation = document.querySelector("#quantity");
-let city = document.querySelector('input[name="location"]');
+const participation = document.querySelector("#quantity");
+const city = document.querySelector('input[name="location"]');
+const cgU = document.querySelector("#checkbox1");
 
-//Variables messages d'erreurs du formulaire
-let firstNameError = document.querySelector("#firstname-error");
-let lastNameError = document.querySelector("#lastname-error");
-let emailError = document.querySelector("#email-error");
-let ageError = document.querySelector("#birth-error");
-let participationError = document.querySelector("#quantity-error");
-let cityError = document.querySelector("#city-error");
+//Variables messages d'erreurs du formulaire 
+const firstNameError = document.querySelector("#firstname-error");
+const lastNameError = document.querySelector("#lastname-error");
+const emailError = document.querySelector("#email-error");
+const ageError = document.querySelector("#birth-error");
+const participationError = document.querySelector("#quantity-error");
+const cityError = document.querySelector("#city-error");
+const errorCgu = document.querySelector("#error-cgu");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -48,8 +50,9 @@ function closeModal() {
 }
 
 // fonction de vérification du champs prénom
+
 function checkOutFirstName() {
-  if (!firstName.value) {
+  if (!firstName.value) {//si le champs est vide
     firstNameError.innerHTML = "Veuillez renseigner votre prénom";
     firstNameError.style.display = "block";
     return false;
@@ -65,6 +68,7 @@ function checkOutFirstName() {
 }
 
 // fonction de vérification du champs nom
+
 function checkOutLastName() {
   if (!lastName.value) {
     lastNameError.innerHTML = "Veuillez renseigner votre nom";
@@ -102,7 +106,25 @@ function checkOutEmail() {
 }
 
 //fonction de vérification du champs birthday
-function checkOutBirth() {}
+function checkOutBirth() {
+  //récupération de la date
+  let dateBirth = age.value;
+  let userDate = new Date(dateBirth);
+  let currentDate = new Date();// variable qui récupère la date actuelle
+
+  if(!age.value){
+    ageError.innerHTML = "Veuillez renseigner votre date de naissance";
+    ageError.style.display = "block";
+    return false;
+  }else if(userDate >= currentDate){
+    ageError.innerHTML = "votre date de naissance n'est pas valide!"
+    ageError.style.display = "block";
+    return false;
+  }else{
+    ageError.style.display = "none";
+    return true;
+  }
+}
 
 // fonction de vérification du champs quantity
 function checkOutQuant() {
@@ -122,25 +144,69 @@ function checkOutQuant() {
   }
 }
 
+//tableau des boutons radios
+let locationArray =[
+  document.querySelector("#location1"), 
+  document.querySelector("#location2"), 
+  document.querySelector("#location3"), 
+  document.querySelector("#location4"), 
+  document.querySelector("#location5"),
+  document.querySelector("#location6")
+];
+
 //fonction de vérification des villes
-function checkOutCity() {}
+function checkOutCity() {
+  if(!locationArray[0].checked &&
+    !locationArray[1].checked &&
+    !locationArray[2].checked &&
+    !locationArray[3].checked &&
+    !locationArray[4].checked &&
+    !locationArray[5].checked 
+    ){// si l'un des boutons n'est pas cochés donc message d'erreur
+    cityError.innerHTML = "veuillez renseinger une ville pour pouvoir participer";
+    cityError.style.display = "block";
+    return false;
+  }else{
+    cityError.style.display = "none";
+    return true;
+  }
+}
+
+//fonction de vérification de la CGU (Conditions générales d'utilisation) cochée ou décochée
+function checkedCgu(){
+  if(!cgU.checked){
+    errorCgu.innerHTML = "Veuillez accepter les conditions générales d'utilisation";
+    errorCgu.style.display = "block";
+    return false;
+  }else{
+    errorCgu.style.display = "none";
+    return true;
+  }
+}
+//fonction de vérification alert événement
+
 
 //appel des fonction pour valider le formulaire
 function validForm() {
   let validCheckOutFirstName = checkOutFirstName();
   let validCheckOutLastName = checkOutLastName();
   let validCheckOutEmail = checkOutEmail();
-  //let validCheckOuBirth = checkOutBirth();
+  let validCheckOuBirth = checkOutBirth();
   let validCheckOutQuant = checkOutQuant();
-  //let validCheckOuCity = checkOutCity();
+  let validCheckOuCity = checkOutCity();
 
   if (
     validCheckOutFirstName &&
     validCheckOutLastName &&
     validCheckOutEmail &&
-    validCheckOutQuant
+    validCheckOuBirth&&
+    validCheckOutQuant&&
+    validCheckOuCity
   ) {
     alert("formulaire envoyé!");
     return true;
   }
 }
+//ouverture de la modal de remerciement
+
+// fermeture de la modal de remerciement
