@@ -134,8 +134,9 @@ main {
 }
 
 .footer {
-  margin: 20px;
-  padding: 10px;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0 20px;
   font-family: var(--font-slab);
 }
 
@@ -325,7 +326,7 @@ input[data-error]::after {
 }
 .btn-submit,
 .btn-signup,
-.btn-close {
+.btn-close{
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -605,10 +606,98 @@ footer {
 #email-error,
 #birth-error,
 #quantity-error,
-#city-error{
+#city-error,
+#error-cgu{
   color: red;
   font-size: .7rem;
   padding: .5rem 0;
   display: none;
 }
+
+/***********MODAL REMERCIEMENT****************/
+#modal-message{
+position: absolute;
+z-index: 1;
+width: 501px;
+height: 854px;
+top: 87px;
+left: 31.9%;
+border-radius: 8px;
+background: #232323;
+box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.25);
+}
+
+#modal-message_close-message{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+
+#modal-message_close-message:before,
+#modal-message_close-message:after{
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 3px;
+  background-color: #fff;
+}
+
+#modal-message_close-message:before{
+  transform: rotate(45deg);
+}
+
+#modal-message_close-message:after{
+  transform: rotate(-45deg);
+}
+
+#modal-message_merci-modal{
+  position: absolute;
+  z-index: 3;
+  left: 106px;
+  right: 121px;
+  top: 336px;
+  bottom: 361.61px;
+  width: 309px;
+  height: 153px;
+  color: white;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 142.6%;
+  text-align: center;
+}
+
+#close-message-bg{
+  position: absolute;
+  top: 793.29px;
+  left: 168.31px;
+  right: 185.14px;
+  bottom: 17.19px;
+  background: #fe142f; 
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  font-family:"DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
 

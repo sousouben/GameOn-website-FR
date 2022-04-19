@@ -102,9 +102,10 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  min="1922-01-01"  
+                  min="1922-01-01" 
+                  max="2004-12-31" 
                 /> 
-                <!--age min 12 ans-->               
+                <!--tranche d'age de 18 à 100 ans-->               
                 <br>
               </div>
               <div id="birth-error"></div> <!--message d'erreur à afficher en JS -->
@@ -219,11 +220,11 @@
       </div>
 
       <div id="modal-message">
-        <span class="close-message"></span>
-        <div id="merci-modal">
+        <span id="modal-message_close-message"></span>
+        <div id="modal-message_merci-modal">
           <br>Merci pour</br>votre inscription</p>
         </div>
-        <button id="close-message-bg" class="btn-close">Fermer</button>
+        <button type="button" id="close-message-bg">Fermer</button>
       </div>
       
     </main>
