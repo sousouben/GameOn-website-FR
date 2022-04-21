@@ -27,8 +27,13 @@ p {
   padding: 0.5vw;
 }
 
-img {
+img  {
   padding-right: 1rem;
+}
+
+.logo{
+  padding-right: 1rem;
+  width: auto;
 }
 
 .topnav {

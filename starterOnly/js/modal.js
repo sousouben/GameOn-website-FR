@@ -23,7 +23,7 @@ const modalCloseGoodBtn = document.querySelector("#close-message-bg");
 const firstName = document.querySelector("#first");
 const lastName = document.querySelector("#last");
 const email = document.querySelector("#email");
-let age = document.querySelector("#birthdate");
+const birthdate = document.querySelector("#birthdate");
 const participation = document.querySelector("#quantity");
 const city = document.querySelector('input[name="location"]');
 const cgU = document.querySelector("#checkbox1");
@@ -99,7 +99,7 @@ function checkOutEmail() {
     emailError.style.display = "block";
     return false;
   } else if (regexEmail.exec(email.value) == null) {
-    emailError.innerHTML = "Votre adresse email n'est pas valide";
+    emailError.innerHTML = "Entrez une adresse valide. Exemple : contact@nom.com";
     emailError.style.display = "block";
     return false;
   } else {
@@ -111,22 +111,26 @@ function checkOutEmail() {
 //fonction de vérification du champs birthday
 function checkOutBirth() {
   //récupération de la date
-  let dateBirth = age.value;
-  let userDate = new Date(dateBirth);
-  let currentDate = new Date(); // variable qui récupère la date actuelle
-
-  if (!age.value) {
+  let dateBirth = birthdate.value;
+  console.log(dateBirth.split("-")[0]);  
+ 
+  if (!dateBirth) {
     ageError.innerHTML = "Veuillez renseigner votre date de naissance";
     ageError.style.display = "block";
     return false;
-  } else if (userDate >= currentDate) {
-    ageError.innerHTML = "votre date de naissance n'est pas valide!";
-    ageError.style.display = "block";
-    return false;
-  } else {
-    ageError.style.display = "none";
-    return true;
-  }
+  }else{
+    let birthYear = dateBirth.split("-")[0];   
+  let currentYear = new Date().getFullYear(); // variable qui récupère la date actuelle
+ let age = currentYear - birthYear;
+    if (age <= 18 ) {
+      ageError.innerHTML = "votre date de naissance n'est pas valide!";
+      ageError.style.display = "block";
+      return false;
+    } else {
+      ageError.style.display = "none";
+      return true;
+    }
+  }   
 }
 
 // fonction de vérification du champs quantity
