@@ -27,11 +27,11 @@ p {
   padding: 0.5vw;
 }
 
-img  {
+img {
   padding-right: 1rem;
 }
 
-.logo{
+.logo {
   padding-right: 1rem;
   width: auto;
 }
@@ -625,24 +625,20 @@ footer {
 /***********MODAL REMERCIEMENT****************/
 #modal-message {
   max-width: 500px;
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
   border-radius: 10px;
-  overflow: hidden;
   color: #fff;
-  padding-top: 10px;
   position: fixed;
   z-index: 1;
   left: 0;
   right: 0;
   top: 0;
-  height: 774px;
+  bottom: 0;
+  height: 609px;
   width: 100%;
   overflow: auto;
   background-color: #232323;
-  margin: 5% auto;
-  padding: 15px 8%;
-  margin: 15px auto;
+  margin: 114px auto;
+  display: none;
 }
 
 #modal-message_close-message {
@@ -691,5 +687,5 @@ footer {
 
 #close-message-bg {
   position: relative;
-  top: 670px;
+  top: 471px;
 }

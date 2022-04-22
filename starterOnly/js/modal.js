@@ -38,7 +38,7 @@ const cityError = document.querySelector("#city-error");
 const errorCgu = document.querySelector("#error-cgu");
 
 // launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal)); // tous les boutons "je m'inscris" au click le modal formulaire s'ouvre
 modalClose.addEventListener("click", closeModal); //pour fermer le modal au click
 
 // launch modal form
@@ -99,7 +99,8 @@ function checkOutEmail() {
     emailError.style.display = "block";
     return false;
   } else if (regexEmail.exec(email.value) == null) {
-    emailError.innerHTML = "Entrez une adresse valide. Exemple : contact@nom.com";
+    emailError.innerHTML =
+      "Entrez une adresse valide. Exemple : contact@nom.com";
     emailError.style.display = "block";
     return false;
   } else {
@@ -112,17 +113,17 @@ function checkOutEmail() {
 function checkOutBirth() {
   //récupération de la date
   let dateBirth = birthdate.value;
-  console.log(dateBirth.split("-")[0]);  
- 
+  console.log(dateBirth.split("-")[0]);
+
   if (!dateBirth) {
     ageError.innerHTML = "Veuillez renseigner votre date de naissance";
     ageError.style.display = "block";
     return false;
-  }else{
-    let birthYear = dateBirth.split("-")[0];   
-  let currentYear = new Date().getFullYear(); // variable qui récupère la date actuelle
- let age = currentYear - birthYear;
-    if (age <= 18 ) {
+  } else {
+    let birthYear = dateBirth.split("-")[0];
+    let currentYear = new Date().getFullYear(); // variable qui récupère la date actuelle
+    let age = currentYear - birthYear;
+    if (age <= 18) {
       ageError.innerHTML = "votre date de naissance n'est pas valide!";
       ageError.style.display = "block";
       return false;
@@ -130,7 +131,7 @@ function checkOutBirth() {
       ageError.style.display = "none";
       return true;
     }
-  }   
+  }
 }
 
 // fonction de vérification du champs quantity
@@ -194,13 +195,16 @@ function checkedCgu() {
     return true;
   }
 }
+
 //fonction qui ouvre la modal de remerciement
 function modalGood() {
   modalGoodMessage.style.display = "block";
 }
 
 //appel des fonction pour valider le formulaire
-function validForm() {
+function validForm(e) {
+  e.preventDefault(); //méthode pour empêcher le rafraichissement de la page formulaire car pas de php
+  //j'ai crée des variable de validation pour appeler chaque fonction de champs vérifiés
   let validCheckOutFirstName = checkOutFirstName();
   let validCheckOutLastName = checkOutLastName();
   let validCheckOutEmail = checkOutEmail();
@@ -218,9 +222,10 @@ function validForm() {
     validCheckOuCity &&
     validCheckOuCgu
   ) {
-    //si tous les champs sont validé on passe de display block à none
+    //si tous les champs sont validés on passe de display block à none
     modalBg.style.display = "none";
     modalGood(); //on appel la fonction de validation
+
     return true; // validation du formulaire
   }
 }
