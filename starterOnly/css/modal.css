@@ -627,7 +627,7 @@ footer {
   max-width: 500px;
   border-radius: 10px;
   color: #fff;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   left: 0;
   right: 0;
