@@ -68,6 +68,7 @@
                   id="first"
                   name="first"                 
                   pattern="[a-zA-Z]{2,}"
+                  required
                 /><br>
               </div>
               <div id="firstname-error" ></div> <!--message d'erreur à afficher en JS-->
@@ -80,6 +81,7 @@
                   id="last"
                   name="last"
                   pattern="[a-zA-Z]{2,}"
+                  required
                 /><br>
               </div>
               <div id="lastname-error"></div> <!--message d'erreur à afficher en JS-->
@@ -90,7 +92,8 @@
                   class="text-control"
                   type="email"
                   id="email"
-                  name="email"                  
+                  name="email"    
+                  required              
                 /><br>
               </div>
               <div id="email-error"></div> <!--message d'erreur à afficher en JS -->
@@ -104,6 +107,7 @@
                   name="birthdate"
                   min="1922-01-01" 
                   max="2004-12-31" 
+                  required
                 /> 
                 <!--tranche d'age de 18 à 100 ans-->               
                 <br>
@@ -112,7 +116,15 @@
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input 
+                type="number" 
+                class="text-control" 
+                id="quantity"
+                name="quantity" 
+                min="0" 
+                max="99"
+                required
+                />
               </div>
               <div id="quantity-error"></div> <!--message d'erreur à afficher en JS-->
               <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
@@ -232,7 +244,7 @@
 
     <footer>
       <p class="copyrights">
-        &#169; 2014 - 2022 GameOn Inc.
+        copyrights 2014 - 2022, GameOn Inc.
       </p>
     </footer>
 
