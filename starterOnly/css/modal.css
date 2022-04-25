@@ -86,6 +86,11 @@ img {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  a.icon {
+    color: red;
+  }
+}
 @media screen and (max-width: 768px) {
   .topnav.responsive {
     position: relative;
@@ -109,10 +114,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: 0px; /*modification de -15px a opx*/
-  }
-  a.icon {
-    color: red;
+    margin-top: 7px; /*modification de -15px*/
   }
 }
 
@@ -121,9 +123,7 @@ main {
   font-weight: bolder;
   color: black;
   padding-top: 0.5vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 1px 20px 15px;
+  margin: 10px 0px 10px;
   border-radius: 2rem;
   text-align: justify;
 }
@@ -171,7 +171,8 @@ main {
   font-size: 16px;
 }
 
-.bground {
+.bground,
+.bground2 {
   display: none;
   position: fixed;
   z-index: 1;
@@ -180,7 +181,7 @@ main {
   height: 100%;
   width: 100%;
   overflow: auto;
-  /*background-color: rgba(26, 39, 156, 0.4);*/
+  background-color: rgba(26, 39, 156, 0.4);
 }
 
 .content {
@@ -195,6 +196,29 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+  .content {
+    margin: 129px auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content {
+    margin: 76px auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    margin: 107px auto;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .content {
+    margin: 76px auto;
+  }
 }
 
 .modal-body {
@@ -544,7 +568,6 @@ footer {
     padding: 12px 35px;
   }
   .copyrights {
-    margin-top: 50px;
     text-align: center;
   }
 }
@@ -615,7 +638,14 @@ footer {
   }
   .hero-text {
     width: unset;
-    font-size: 1.5vh;
+    font-size: 42%;
+    padding-right: 11%;
+  }
+  .logo {
+    width: 61%;
+  }
+  .topnav a.icon {
+    margin-top: -39px;
   }
 }
 
@@ -648,8 +678,14 @@ footer {
   width: 100%;
   overflow: auto;
   background-color: #232323;
-  margin: 114px auto;
+  margin: 100px auto;
   display: none;
+}
+
+@media screen and (max-width: 280px) {
+  #modal-message {
+    margin: 67px auto;
+  }
 }
 
 #modal-message_close-message {
@@ -694,6 +730,11 @@ footer {
   text-align: center;
   right: 0;
   left: 0;
+}
+@media screen and (max-width: 280px) {
+  #modal-message_merci-modal {
+    font-size: 26px;
+  }
 }
 
 #close-message-bg {

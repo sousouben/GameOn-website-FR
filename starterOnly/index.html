@@ -1,56 +1,53 @@
 <!DOCTYPE html>
-<html lang="fr"><!--J'ai mis en fr car le site est en français-->
+<html lang="fr">
+  <!--J'ai mis en fr car le site est en français-->
   <head>
     <meta charset="utf-8" />
-    <title>GameOn-HomePage</title><!--modification du titre pour correspondre à la maquette-->
+    <title>GameOn-HomePage</title>
+    <!--modification du titre pour correspondre à la maquette-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="./css/modal.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
     />
   </head>
   <body>
-
     <header class="topnav" id="myTopnav">
       <div class="header-logo">
         <img alt="logo gameone" src="./images/Logo.png" class="logo" />
       </div>
 
-    <nav class="main-navbar">      
-      <a href="#" class="active"><span>Détails de l'évènement</span> </a><!--suppression du lien accueil pour corrrespondre à la maquette-->
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </nav>    
+      <nav class="main-navbar">
+        <a href="#" class="active"><span>Détails de l'évènement</span> </a
+        ><!--suppression du lien accueil pour corrrespondre à la maquette-->
+        <a href="#"><span>À propos</span></a>
+        <a href="#"><span>Contact</span></a>
+        <a href="#"><span>Évènements passés</span></a>
+        <a href="javascript:void(0);" class="icon" onclick="editNav()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
     </header>
-  
-    <main>
 
+    <main>
       <section class="hero-section">
         <div class="hero-content">
-          <h1 class="hero-headline">
-            Marathon national<br>
-            de jeux vidéos
-          </h1>
+          <h1 class="hero-headline">Marathon national <br />de jeux vidéos</h1>
           <p class="hero-text">
-            Vous aimez jouer ? Notre prochain évènement gaming est ouvert
-            aux réservations... Places limitées !
+            Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux
+            réservations... Places limitées !
           </p>
-          <button class="btn-signup modal-btn">
-            je m'inscris
-          </button>
+          <button class="btn-signup modal-btn">je m'inscris</button>
         </div>
         <div class="hero-img">
           <img src="./images/bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn">
-          je m'inscris
-        </button>
+        <button class="btn-signup modal-btn">je m'inscris</button>
       </section>
 
       <!--modal-->
@@ -58,23 +55,23 @@
         <div class="content">
           <span id="close"></span>
           <div class="modal-body">
-            <form name="reserve" id="modal-form" method="post"><!--suppression du <br>-->
-              <div
-                class="formData">
-                <label for="first">Prénom</label><br>
+            <form name="reserve" id="modal-form" method="post">
+              <!--suppression du <br>-->
+              <div class="formData">
+                <label for="first">Prénom</label><br />
                 <input
                   class="text-control"
                   type="text"
                   id="first"
-                  name="first"                 
+                  name="first"
                   pattern="[a-zA-Z]{2,}"
                   required
-                /><br>
+                /><br />
               </div>
-              <div id="firstname-error" ></div> <!--message d'erreur à afficher en JS-->
-              <div
-                class="formData">
-                <label for="last">Nom</label><br>
+              <div id="firstname-error"></div>
+              <!--message d'erreur à afficher en JS-->
+              <div class="formData">
+                <label for="last">Nom</label><br />
                 <input
                   class="text-control"
                   type="text"
@@ -82,54 +79,59 @@
                   name="last"
                   pattern="[a-zA-Z]{2,}"
                   required
-                /><br>
+                /><br />
               </div>
-              <div id="lastname-error"></div> <!--message d'erreur à afficher en JS-->
-              <div
-                class="formData">
-                <label for="email">E-mail</label><br>
+              <div id="lastname-error"></div>
+              <!--message d'erreur à afficher en JS-->
+              <div class="formData">
+                <label for="email">E-mail</label><br />
                 <input
                   class="text-control"
                   type="email"
                   id="email"
-                  name="email"    
-                  required              
-                /><br>
+                  name="email"
+                  required
+                /><br />
               </div>
-              <div id="email-error"></div> <!--message d'erreur à afficher en JS -->
-              <div
-                class="formData">
-                <label for="birthdate">Date de naissance</label><br>
+              <div id="email-error"></div>
+              <!--message d'erreur à afficher en JS -->
+              <div class="formData">
+                <label for="birthdate">Date de naissance</label><br />
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  min="1922-01-01" 
-                  max="2004-12-31" 
+                  min="1922-01-01"
+                  max="2004-12-31"
                   required
-                /> 
-                <!--tranche d'age de 18 à 100 ans-->               
-                <br>
+                />
+                <!--tranche d'age de 18 à 100 ans-->
+                <br />
               </div>
-              <div id="birth-error"></div> <!--message d'erreur à afficher en JS -->
-              <div
-                class="formData">
-                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input 
-                type="number" 
-                class="text-control" 
-                id="quantity"
-                name="quantity" 
-                min="0" 
-                max="99"
-                required
+              <div id="birth-error"></div>
+              <!--message d'erreur à afficher en JS -->
+              <div class="formData">
+                <label for="quantity"
+                  >À combien de tournois GameOn avez-vous déjà participé
+                  ?</label
+                ><br />
+                <input
+                  type="number"
+                  class="text-control"
+                  id="quantity"
+                  name="quantity"
+                  min="0"
+                  max="99"
+                  required
                 />
               </div>
-              <div id="quantity-error"></div> <!--message d'erreur à afficher en JS-->
-              <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
-              <div
-                class="formData">
+              <div id="quantity-error"></div>
+              <!--message d'erreur à afficher en JS-->
+              <p class="text-label">
+                À quel tournoi souhaitez-vous participer cette année ?
+              </p>
+              <div class="formData">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -197,9 +199,9 @@
                   Portland</label
                 >
               </div>
-              <div id="city-error"></div> <!--message d'erreur à afficher en JS-->
-              <div
-                class="formData">
+              <div id="city-error"></div>
+              <!--message d'erreur à afficher en JS-->
+              <div class="formData">
                 <input
                   class="checkbox-input"
                   type="checkbox"
@@ -207,22 +209,22 @@
                   checked
                   required
                 />
-                <label class="checkbox2-label" for="checkbox1" >
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <div id="error-cgu"></div>
-                <br>
+                <br />
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
-                <br>
+                <br />
               </div>
               <input
                 class="btn-submit"
-                type="submit"                
+                type="submit"
                 value="C'est parti"
                 onclick="validForm(event)"
               />
@@ -230,25 +232,22 @@
           </div>
         </div>
       </div>
-
-      <div id="modal-message">
-        <span id="modal-message_close-message"></span>
-        <div id="modal-message_merci-modal">
-          <p>Merci pour</p>
-          <p>votre inscription</p>
+      <div class="bground2">
+        <div id="modal-message">
+          <span id="modal-message_close-message"></span>
+          <div id="modal-message_merci-modal">
+            <p>Merci pour</p>
+            <p>votre inscription</p>
+          </div>
+          <button type="button" id="close-message-bg">Fermer</button>
         </div>
-        <button type="button" id="close-message-bg">Fermer</button>
       </div>
-      
     </main>
 
     <footer>
-      <p class="copyrights">
-        copyrights 2014 - 2022, GameOn Inc.
-      </p>
+      <p class="copyrights">copyrights 2014 - 2022, GameOn Inc.</p>
     </footer>
 
     <script src="./js/modal.js"></script>
-
   </body>
 </html>

@@ -18,6 +18,7 @@ const modalCloseGoodMessage = document.querySelector(
   "#modal-message_close-message"
 );
 const modalCloseGoodBtn = document.querySelector("#close-message-bg");
+const bground = document.querySelector(".bground2");
 
 //Variables du formulaire
 const firstName = document.querySelector("#first");
@@ -224,8 +225,8 @@ function validForm(e) {
   ) {
     //si tous les champs sont validés on passe de display block à none
     modalBg.style.display = "none";
+    bground.style.display = "block"; // le fond d'écran s'affiche en background-color: rgba(26, 39, 156, 0.4);
     modalGood(); //on appel la fonction de validation
-
     return true; // validation du formulaire
   }
 }
@@ -234,9 +235,11 @@ function validForm(e) {
 modalCloseGoodMessage.addEventListener("click", (e) => {
   //au click sur la croix la modal se ferme
   modalGoodMessage.style.display = "none";
+  bground.style.display = "none"; //le fond d'écran s'enlève
 });
 
 modalCloseGoodBtn.addEventListener("click", (e) => {
   //au click sur le bouton fermer il se ferme
   modalGoodMessage.style.display = "none";
+  bground.style.display = "none"; //le fond d'écran s'enlève
 });
