@@ -15,7 +15,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /*background-image: url("background.png"); suppression car n'existe pas*/
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -144,13 +144,6 @@ main {
   background: #3876ac;
 }
 
-.footer {
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 0 20px;
-  font-family: var(--font-slab);
-}
-
 /* Modal form */
 
 .button {
@@ -185,7 +178,7 @@ main {
 }
 
 .content {
-  margin: 5% auto;
+  margin: 15px auto;
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -196,29 +189,9 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
-}
-
-@media screen and (max-width: 1280px) {
-  .content {
-    margin: 129px auto;
-  }
-}
-@media screen and (max-width: 800px) {
-  .content {
-    margin: 76px auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .content {
-    margin: 107px auto;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  .content {
-    margin: 76px auto;
-  }
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
 }
 
 .modal-body {
@@ -239,7 +212,7 @@ input {
   outline: none;
 }
 
-input:required:invalid {
+.text-control:focus:invalid {
   border-color: #c00000;
   border-width: 2px;
 }
@@ -513,13 +486,14 @@ input[data-error]::after {
 .copyrights {
   color: #fe142f;
   padding: 0;
-  font-size: 1rem;
+  font-size: 0.7rem;
   margin: 60px 0 30px;
   font-weight: bolder;
 }
 .hero-section > .btn-signup {
   display: none;
 }
+
 footer {
   padding-left: 2vw;
   padding-right: 2vw;
@@ -679,6 +653,9 @@ footer {
   overflow: auto;
   background-color: #232323;
   margin: 100px auto;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
   display: none;
 }
 
