@@ -123,8 +123,7 @@ function checkOutEmail() {
 //fonction de vérification du champs birthday
 function checkOutBirth() {
   //récupération de la date
-  let dateBirth = birthdate.value;
-  console.log(dateBirth.split("-")[0]); //methode qui récupère l'année
+  let dateBirth = birthdate.value;  
 
   if (!dateBirth) {
     //si la date n'est pas renseigné champs vide
