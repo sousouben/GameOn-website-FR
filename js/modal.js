@@ -50,6 +50,7 @@ function launchModal() {
 
 //launch close modal
 function closeModal() {
+  initializeFields();
   modalBg.style.display = "none"; // fermeture du modal
 }
 
@@ -123,7 +124,7 @@ function checkOutEmail() {
 //fonction de vérification du champs birthday
 function checkOutBirth() {
   //récupération de la date
-  let dateBirth = birthdate.value;  
+  let dateBirth = birthdate.value;
 
   if (!dateBirth) {
     //si la date n'est pas renseigné champs vide
@@ -258,7 +259,14 @@ function initializeFields() {
   birthdate.value = null;
   participation.value = null;
   city.checked = false;
-  cgU.checked = false;  
+  cgU.checked = false;
+  firstNameError.style.display = "none";
+  lastNameError.style.display = "none";
+  emailError.style.display = "none";
+  ageError.style.display = "none";
+  participationError.style.display = "none";
+  cityError.style.display = "none";
+  errorCgu.style.display = "none";
 }
 
 // fermeture de la modal de remerciement
