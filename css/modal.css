@@ -197,6 +197,12 @@ main {
   -moz-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
 }
 
+@media screen and (max-width: 540px) {
+  .content {
+    top: 79px;
+  }
+}
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
@@ -494,17 +500,18 @@ input[data-error]::after {
 .copyrights {
   color: #fe142f;
   padding: 0;
-  font-size: 0.7rem;
+  font-size: 15px;
   margin: 60px 0 30px;
-  font-weight: bolder;
+  font-weight: 500;
+  line-height: 18px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
 }
 .hero-section > .btn-signup {
   display: none;
 }
 
 footer {
-  padding-left: 2vw;
-  padding-right: 2vw;
   margin: 0 20px;
 }
 
@@ -551,6 +558,8 @@ footer {
   }
   .copyrights {
     text-align: center;
+    font-size: 10px;
+    line-height: 12px;
   }
 }
 
@@ -648,7 +657,7 @@ footer {
 /***********MODAL REMERCIEMENT****************/
 #modal-message {
   max-width: 500px;
-  border-radius: 10px;
+  border-radius: 8px;
   color: #fff;
   position: absolute;
   z-index: 1;
@@ -661,9 +670,7 @@ footer {
   overflow: auto;
   background-color: #232323;
   margin: 15px auto;
-  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
-  -webkit-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
-  -moz-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.25);
   display: none;
 }
 
@@ -693,6 +700,7 @@ footer {
   height: 33px;
   width: 3px;
   background-color: #fff;
+  border: 1px solid;
 }
 
 #modal-message_close-message:before {
@@ -710,9 +718,10 @@ footer {
   color: white;
   font-family: "DM Sans";
   font-style: normal;
-  font-weight: normal;
   font-size: 36px;
-  line-height: 142.6%;
+  font-weight: 400;
+  line-height: 51px;
+  letter-spacing: 0em;
   text-align: center;
   right: 0;
   left: 0;
@@ -726,6 +735,7 @@ footer {
 @media screen and (max-width: 414px) {
   #modal-message {
     height: 462px;
+    top: 79px;
   }
   #modal-message_merci-modal {
     bottom: 195px;
