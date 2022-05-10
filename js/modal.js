@@ -51,7 +51,7 @@ function launchModal() {
 //launch close modal
 function closeModal() {
   initializeFields();
-  modalBg.style.display = "none"; // fermeture du modal
+  modalBg.style.display = "none"; // fermeture du modal formulaire
 }
 
 // fonction de vérification du champs prénom
@@ -127,14 +127,14 @@ function checkOutBirth() {
   let dateBirth = birthdate.value;
 
   if (!dateBirth) {
-    //si la date n'est pas renseigné champs vide
+    //si la date de naissance n'est pas renseigné champs vide
     ageError.innerHTML = "Veuillez renseigner votre date de naissance";
     ageError.style.display = "block";
     return false;
   } else {
-    let birthYear = dateBirth.split("-")[0];
+    let birthYear = dateBirth.split("-")[0];//récupère l'année de naissance
     let currentYear = new Date().getFullYear(); // variable qui récupère la date actuelle
-    let age = currentYear - birthYear;
+    let age = currentYear - birthYear;//date actuelle- date de naissance = age 
     if (age <= 17) {
       //si l'age est inferieur ou égale à 17 ans donc erreur car il faut avoir 18 ans
       ageError.innerHTML = "votre date de naissance n'est pas valide!";
